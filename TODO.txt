@@ -1,0 +1,82 @@
+lav en funktion der kan generere facit arrays, uden at skulle bruge et bestemt et fra start.
+
+Sørg for at man kun kan ændre i tal der startede med at være 0. og man skal kunne overskrive disse efter, men stadig ikke de tal der ved begyndelse > 0.
+
+gør det tydeligt hvilke tal, man selv har sat ind og hvilke der ikke er.. (måske farve eller highlight)
+
+prøv at lave sudokusolveren anderledes, så den ikke bare prøver igen når den fucker. (måske skal placementvalidaotr and shit laves om)
+
+gør så man kan navigere med piletaser. (Console.SetCursorPosition og ConsoleKey.Uparrow f.eks.)
+
+
+
+
+
+
+lav placementvalidator static og gør så metoder tager array[,] som input, så den ikke behøves at implementere Game game = new Game();....
+gør det samme for andre klasser, for at undgå tight coupling og stack overflow.
+
+
+
+
+
+
+
+
+The solution is divide in to 2 parts:
+A. Generating the number pattern 600 billion
+B. Generating the masking pattern ~ 7e23 combinations
+
+A ) For Number pattern the fastest way which can generate unique combinations with NO time spent on backtracing or testing
+
+Step 1. Choose an already exiting matrix, I chose the below one as it can be made easily by human without any help from a computing device or solver:
+
+First row is numbers in ascending order
+Second row is also in ascending order but start from 4 & roll around
+Third row is also in ascending order but start from 7 & roll around
+Row 4,5,6: Replace the three cell column with the top right column - 2 5 8 and roll within the 3x3 cell for last column
+Row 7,8,9: Replace the three cell column with the top right column - 3 6 9 and roll within the 3x3 cell for last column
+
+1 2 3 4 5 6 7 8 9
+4 5 6 7 8 9 1 2 3
+7 8 9 1 2 3 4 5 6
+2 3 1 5 6 4 8 9 7
+5 6 4 8 9 7 2 3 1
+8 9 7 2 3 1 5 6 4
+3 1 2 6 4 5 9 7 8
+6 4 5 9 7 8 3 1 2
+9 7 8 3 1 2 6 4 5
+
+Step 2. Shuffle the the digits and replace in all other cells
+Step 3. Randomly rearrange columns 1,2 and 3 within themselves
+Step 4. Randomly rearrange columns 4,5 and 6 within themselves
+Step 5. Randomly rearrange columns 7,8 and 9 within themselves
+Step 6. Randomly rearrange rows 1,2 and 3 within themselves
+Step 7. Randomly rearrange rows 4,5 and 6 within themselves
+Step 8. Randomly rearrange rows 7,8 and 9 within themselves
+Step 9. Randomly rearrange in 3 column groups of size 9x3
+Step 10. Randomly rearrange in 3 row groups of size 3x9
+
+voila...
+
+5 8 3 1 6 4 9 7 2
+7 2 9 3 5 8 1 4 6
+1 4 6 2 7 9 3 8 5
+8 5 2 6 9 1 4 3 7
+3 1 7 4 2 5 8 6 9
+6 9 4 8 3 7 2 5 1
+4 6 5 9 1 3 7 2 8
+2 3 1 7 8 6 5 9 4
+9 7 8 5 4 2 6 1 3
+
+B ) For Masking Pattern we need to have a solver algorithm. As we already have a quite unique number grid (which is also solved!) this gives us faster performance for using solver
+
+Step 1: Start with selecting 15 random locations out of the 81.
+Step 2: Check with solver whether it has unique solution
+Step 3: If solution not unique select additional location. iterate Steps 2 and 3 until unique solution found
+
+This should give you the very unique and fast Sudoku board.
+
+Step 2 means e.g. change all the 1's for 5's and 2's for 1's.
+Steps 3-8 mean that you can rearrange rows and columns so long as they stay in the same squares. 
+Steps 9 & 10 mean rearrange rows and columns of squares. 
