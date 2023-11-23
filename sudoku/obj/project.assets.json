@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/home/vring/.nuget/packages/": {}
+    "C:\\Users\\valde\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/c/work/sudoku/sudokuSolver.csproj",
+      "projectUniqueName": "C:\\Users\\valde\\Work\\projects\\Sudoku\\sudoku\\sudokuSolver.csproj",
       "projectName": "sudokuSolver",
-      "projectPath": "/mnt/c/work/sudoku/sudokuSolver.csproj",
-      "packagesPath": "/home/vring/.nuget/packages/",
-      "outputPath": "/mnt/c/work/sudoku/obj/",
+      "projectPath": "C:\\Users\\valde\\Work\\projects\\Sudoku\\sudoku\\sudokuSolver.csproj",
+      "packagesPath": "C:\\Users\\valde\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\valde\\Work\\projects\\Sudoku\\sudoku\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/vring/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\valde\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -49,7 +49,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -58,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.109/sdk/6.0.109/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

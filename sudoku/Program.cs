@@ -9,10 +9,10 @@ namespace Sudoku
             var sudokuSolver = SudokuSolver.GetInstance();
             var game = Game.GetInstance();
             var sudokuCreater = SudokuCreater.GetInstance();
-            //game.GameLoop();
-            TablePrinter tablePrinter = new TablePrinter();
+            game.GameLoop();
+            //TablePrinter tablePrinter = new TablePrinter();
             //sudokuCreater.CreateSudokuFacit(tablePrinter.FacitArray);
-            sudokuSolver.SudokuSolverTester2(sudokuSolver.SudokuSolverTesterArray);
+            //sudokuSolver.SudokuSolverTester2(sudokuSolver.SudokuSolverTesterArray);
             //sudokuCreater.CreateSudokuFacit(game.TheArray);
         }
     }

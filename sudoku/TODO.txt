@@ -4,7 +4,7 @@ Sørg for at man kun kan ændre i tal der startede med at være 0. og man skal k
 
 gør det tydeligt hvilke tal, man selv har sat ind og hvilke der ikke er.. (måske farve eller highlight)
 
-prøv at lave sudokusolveren anderledes, så den ikke bare prøver igen når den fucker. (måske skal placementvalidaotr and shit laves om)
+prøv at lave sudokusolveren anderledes, så den ikke bare prøver igen når den fejler. (måske skal placementvalidaotr laves om)
 
 gør så man kan navigere med piletaser. (Console.SetCursorPosition og ConsoleKey.Uparrow f.eks.)
 
